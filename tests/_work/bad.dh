@@ -1,0 +1,9 @@
+fs f ( a : int ) : int is
+begin
+    ret ( a )
+end
+fs main is
+begin
+    println ( f ( 1 2 ) )
+end
+

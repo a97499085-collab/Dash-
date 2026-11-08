@@ -1,0 +1,15 @@
+name = "dash"
+version = "0.1.0"
+description = "Dash: a small systems level language. The DCM, the Dash Compiler Machine, is written in pure Ada."
+authors = ["Said Mammadov"]
+maintainers = ["Said Mammadov"]
+license = "MIT"
+
+#  The compiler machine is an Ada project, so the crate is built with
+#  gprbuild through the project file.
+project-files = ["dash.gpr"]
+executables = ["dcm_main"]
+
+[[actions]]
+type = "test"
+command = ["powershell", "-ExecutionPolicy", "Bypass", "-File", "tests/run_tests.ps1"]

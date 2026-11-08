@@ -1,0 +1,30 @@
+------------------------------------------------------------------------------
+--  Dash -- project file for the DCM (Dash Compiler Machine).
+--
+--  Build with:   gprbuild -P dash.gpr
+--  Run with:     gprbuild -P dash.gpr && gnatrun -P dash.gpr
+--  or through Alire:   alr build
+------------------------------------------------------------------------------
+
+project Dash is
+
+   for Languages use ("Ada");
+   for Source_Dirs use ("src");
+   for Object_Dir use "obj";
+   for Exec_Dir use "bin";
+   for Main use ("dcm_main.adb");
+
+   package Compiler is
+      for Default_Switches ("Ada") use
+        ("-gnat2022", "-gnatwa", "-O2", "-g", "-fno-strict-aliasing");
+   end Compiler;
+
+   package Binder is
+      for Default_Switches ("Ada") use ("-Es");
+   end Binder;
+
+   package Linker is
+      for Default_Switches ("Ada") use ("-static");
+   end Linker;
+
+end Dash;

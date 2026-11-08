@@ -1,0 +1,11 @@
+--  The smallest Dash program.
+--
+--  fs   : begins a function
+--  is   : ends the header
+--  begin / end : the body
+--  println : a builtin
+
+fs main is
+begin
+    println ( "Dash selam" )
+end

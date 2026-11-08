@@ -1,0 +1,33 @@
+--  Loops, functions and recursion.
+--
+--  A function is written with fs, its parameters are written in brackets,
+--  and the result type may be given after the brackets: ': int'.
+--  A recursive function needs that type, because it cannot be worked out.
+
+fs fib ( n : int ) : int is
+    let a : int = 0
+    let b : int = 1
+    let i : int = 0
+    let r : int = 0
+begin
+    ut ( i < n ) begin
+        r = a + b
+        a = b
+        b = r
+        i = i + 1
+    end
+    ret ( a )
+end
+
+fs main is
+    let i : int = 0
+    let total : int = 0
+begin
+    ut ( i < 15 ) begin
+        total = total + fib ( i )
+        println ( fib ( i ) )
+        i = i + 1
+    end
+    println ( "toplam" )
+    println ( total )
+end

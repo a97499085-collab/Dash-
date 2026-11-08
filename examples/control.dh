@@ -1,0 +1,29 @@
+--  Functions, nested functions and the loop.
+--
+--  A function without a 'ret' is a procedure.
+
+fs is_even ( n : int ) : int is
+    let r : int = n % 2
+begin
+    ret ( r )
+end
+
+fs main is
+    let i : int = 0
+    let count : int = 0
+
+    fs report ( code : int ) is
+    begin
+        println ( code )
+    end
+begin
+    ut ( i < 20 ) begin
+        st ( eq ( is_even ( i ) 0 ) ) begin
+            count = count + 1
+        end
+        i = i + 1
+    end
+
+    println ( count )
+    report ( 42 )
+end

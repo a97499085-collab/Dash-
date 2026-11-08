@@ -1,0 +1,13 @@
+--  Reading from the standard input.
+--
+--    dcm run examples\echo.dh
+--    Merhaba
+--    42
+
+fs main is
+    let ad = read ( )
+    let yas = readint ( )
+begin
+    println ( "ad: " + ad )
+    println ( "yas: " + text ( yas ) )
+end

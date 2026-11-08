@@ -1,0 +1,31 @@
+--  Strings, conditionals and the builtins.
+--
+--  A 'let' without a type works out the type from the initialiser.
+
+fs main is
+    let a = "Dash"
+    let b = " dili"
+    let c = a + b
+    let n = len ( c )
+begin
+    println ( c )
+    println ( n )
+    println ( concat ( "Merhaba" " dunya" ) )
+
+    st ( n > 5 ) begin
+        println ( "uzun bir metin" )
+    end
+
+    st ( n < 5 ) begin
+        println ( "kisa bir metin" )
+    end
+
+    println ( text ( 42 ) )
+    println ( not ( 1 > 2 ) )
+    println ( eq ( 3 3 ) )
+    println ( and ( 1 > 0 2 > 3 ) )
+    println ( or ( 1 > 0 2 > 3 ) )
+    println ( min ( 7 3 ) )
+    println ( max ( 7 3 ) )
+    println ( abs ( 0 - 9 ) )
+end
